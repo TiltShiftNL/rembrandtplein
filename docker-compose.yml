@@ -1,0 +1,44 @@
+version: "3.2"
+
+services:
+    database:
+        image: postgres:9-alpine
+        ports:
+            - "5402:5432"
+        environment:
+            POSTGRES_PASSWORD: insecure
+    web:
+        build: .
+        ports:
+            - "80:80"
+        depends_on:
+            - database
+        command: ["/usr/bin/wait-for-it.sh", "database:5432", "--" , "/app/docker-entrypoint.sh"]
+        links:
+            - database:database
+        environment:
+            RBP_MESSAGEBIRD: insecure
+            SYMFONY__REMBRANDT__DATABASE__HOST: "database"
+            SYMFONY__REMBRANDT__DATABASE__PORT: "5432"
+            SYMFONY__REMBRANDT__DATABASE__NAME: "postgres"
+            SYMFONY__REMBRANDT__DATABASE__USER: "postgres"
+            SYMFONY__REMBRANDT__DATABASE__PASSWORD: "insecure"
+            SYMFONY__REMBRANDT__MAILER__TRANSPORT: "smtp"
+            SYMFONY__REMBRANDT__MAILER__HOST: "localhost"
+            SYMFONY__REMBRANDT__MAILER__USER: ""
+            SYMFONY__REMBRANDT__MAILER__PASSWORD: ""
+            SYMFONY__REMBRANDT__MAILER__PORT: "25"
+            SYMFONY__REMBRANDT__MAILER__ENCRYPTION: "ssl" # null, ssl, tls
+            SYMFONY__REMBRANDT__SECRET: "insecure" # random
+            SYMFONY__REMBRANDT__MAIL__FROM: "service@website-domain"
+            SYMFONY__REMBRANDT__MAIL__CC: "service@website-domain"
+            SYMFONY__REMBRANDT__RETENTION__POLICY: "P14D"
+            SYMFONY__REMBRANDT__REQUEST__CONTEXT__HOST: "website-domain" # domain, scheme and base url for links in e-mails
+            SYMFONY__REMBRANDT__REQUEST__CONTEXT__SCHEME: "https"
+            SYMFONY__REMBRANDT__REQUEST__CONTEXT__BASE_URL: ""
+            SYMFONY__REMBRANDT__MESSAGEBIRD__ENABLE: "false"
+            SYMFONY__REMBRANDT__MESSAGEBIRD__API__KEY: "insecure"
+            SYMFONY__REMBRANDT__SMS__ORGINATOR: "service-name"
+            SYMFONY__REMBRANDT__PIWIK__SITE__ID: "null" # null for no piwik integration
+            SYMFONY__REMBRANDT__TRUSTED__PROXIES: "127.0.0.1/32,192.168.0.0/16,172.16.0.0/12"
+            SYMFONY__REMBRANDT__AUTO__LOGIN__FROM__EMAIL: "PT5M"
