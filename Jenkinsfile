@@ -52,8 +52,37 @@ if (BRANCH == "master") {
             tryStep "deployment", {
                 build job: 'Subtask_Openstack_Playbook',
                 parameters: [
-                    [$class: 'StringParameterValue', name: 'INVENTORY', value: 'acceptance_app'],
+                    [$class: 'StringParameterValue', name: 'INVENTORY', value: 'acceptance'],
                     [$class: 'StringParameterValue', name: 'PLAYBOOK', value: 'deploy-rembrandtplein.yml'],
+                ]
+            }
+        }
+    }
+
+
+    stage('Waiting for approval') {
+        slackSend channel: '#ci-channel', color: 'warning', message: 'Rembrandtplein is waiting for Production Release - please confirm'
+        input "Deploy to Production?"
+    }
+
+    node {
+        stage('Push production image') {
+            tryStep "image tagging", {
+                def image = docker.image("build.app.amsterdam.nl:5000/fixxx/rembrandtplein:${env.BUILD_NUMBER}")
+                image.pull()
+                image.push("production")
+                image.push("latest")
+            }
+        }
+    }
+
+    node {
+        stage("Deploy") {
+            tryStep "deployment", {
+                build job: 'Subtask_Openstack_Playbook',
+                parameters: [
+                        [$class: 'StringParameterValue', name: 'INVENTORY', value: 'production'],
+                        [$class: 'StringParameterValue', name: 'PLAYBOOK', value: 'deploy-rembrandtplein.yml'],
                 ]
             }
         }
