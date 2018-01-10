@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
     database:
-        image: postgres:9-alpine
+        image: postgres:latest
         ports:
             - "5402:5432"
         environment:
