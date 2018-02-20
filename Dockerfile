@@ -14,7 +14,7 @@ RUN apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade \
 
 COPY . /app
 COPY /Docker/parameters.yml /app/app/config/parameters.yml
-COPY /Docker/parameters_env.php /srv/web/heelenschoon/app/config/parameters_env.php
+COPY /Docker/parameters_env.php /app/app/config/parameters_env.php
 
 RUN chown -R www-data:www-data /app/app/cache \
     && chmod 770 /app/app/cache \
