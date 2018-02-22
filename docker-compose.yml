@@ -37,7 +37,7 @@ services:
             SYMFONY__REMBRANDT__REQUEST__CONTEXT__HOST: "website-domain" # domain, scheme and base url for links in e-mails
             SYMFONY__REMBRANDT__REQUEST__CONTEXT__SCHEME: "https"
             SYMFONY__REMBRANDT__REQUEST__CONTEXT__BASE_URL: ""
-            SYMFONY__REMBRANDT__MESSAGEBIRD__ENABLE: "true"
+            SYMFONY__REMBRANDT__MESSAGEBIRD__ENABLE: "false"
             SYMFONY__REMBRANDT__MESSAGEBIRD__API__KEY: "insecure"
             SYMFONY__REMBRANDT__SMS__ORGINATOR: "service-name"
             SYMFONY__REMBRANDT__PIWIK__SITE__ID: "null" # null for no piwik integration

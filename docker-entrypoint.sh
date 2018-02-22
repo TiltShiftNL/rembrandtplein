@@ -15,10 +15,10 @@ parameters:
    database_name: ${SYMFONY__REMBRANDT__DATABASE__NAME}
    database_user: ${SYMFONY__REMBRANDT__DATABASE__USER}
    database_password: ${SYMFONY__REMBRANDT__DATABASE__PASSWORD}
-   mailer_transport: ${SYMFONY__REMBRANDT__MAILER__TRANSPORT}
-   mailer_host: ${SYMFONY__REMBRANDT__MAILER__HOST}
-   mailer_user: ${SYMFONY__REMBRANDT__MAILER__USER}
-   mailer_password: nu${SYMFONY__REMBRANDT__MAILER__PASSWORD}ll
+   mailer_transport: smtp
+   mailer_host: 127.0.0.1
+   mailer_user: null
+   mailer_password: null
    secret: ${SYMFONY__REMBRANDT__SECRET}
    gams_cookies_token_name: GAMS_Rembrandtplein_Token_PROD
    gams_cookies_token_secure: true
