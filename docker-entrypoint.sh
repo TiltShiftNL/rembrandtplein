@@ -24,6 +24,7 @@ parameters:
    gams_cookies_token_secure: true
    gams_cookies_token_expiry: 51840000
    messagebird_accountkey: ${SYMFONY__REMBRANDT__MESSAGEBIRD__API__KEY}
+   messagebird_enable: ${SYMFONY__REMBRANDT__MESSAGEBIRD__ENABLE}
    sms_originator: "DEVAMSRMBPL"
    sms_disable: false
    trusted_proxies:
