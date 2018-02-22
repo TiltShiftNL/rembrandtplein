@@ -38,7 +38,6 @@ services:
             SYMFONY__REMBRANDT__REQUEST__CONTEXT__SCHEME: "https"
             SYMFONY__REMBRANDT__REQUEST__CONTEXT__BASE_URL: ""
             SYMFONY__REMBRANDT__MESSAGEBIRD__ENABLE: "true"
-            SYMFONY__REMBRANDT__APP_PHONE_ENABLED: "true"
             SYMFONY__REMBRANDT__MESSAGEBIRD__API__KEY: "insecure"
             SYMFONY__REMBRANDT__SMS__ORGINATOR: "service-name"
             SYMFONY__REMBRANDT__PIWIK__SITE__ID: "null" # null for no piwik integration
