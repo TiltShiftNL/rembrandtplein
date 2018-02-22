@@ -18,14 +18,14 @@ parameters:
    mailer_transport: ${SYMFONY__REMBRANDT__MAILER__TRANSPORT}
    mailer_host: ${SYMFONY__REMBRANDT__MAILER__HOST}
    mailer_user: ${SYMFONY__REMBRANDT__MAILER__USER}
-   mailer_password: nu${SYMFONY__REMBRANDT__MAILER__PASSWORD}ll
+   mailer_password: ${SYMFONY__REMBRANDT__MAILER__PASSWORD}ll
    secret: ${SYMFONY__REMBRANDT__SECRET}
    gams_cookies_token_name: GAMS_Rembrandtplein_Token_PROD
    gams_cookies_token_secure: true
    gams_cookies_token_expiry: 51840000
    messagebird_accountkey: ${SYMFONY__REMBRANDT__MESSAGEBIRD__API__KEY}
    messagebird_enable: ${SYMFONY__REMBRANDT__MESSAGEBIRD__ENABLE}
-   sms_originator: "DEVAMSRMBPL"
+   sms_originator: DEVAMSRMBPL
    sms_disable: true
    trusted_proxies:
         - 127.0.0.1
