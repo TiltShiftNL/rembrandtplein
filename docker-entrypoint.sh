@@ -5,6 +5,37 @@ echo Starting server
 set -u
 set -e
 
+DB_HOST=${SYMFONY__REMBRANDT__DATABASE__HOST:-rembrandtplein-db.service.consul}
+DB_PORT=${SYMFONY__REMBRANDT__DATABASE__PORT:-5432}
+
+cat > /app/app/config/parameters.yml <<EOF
+parameters:
+   database_host: ${DB_HOST}
+   database_port: ${DB_PORT}
+   database_name: ${SYMFONY__REMBRANDT__DATABASE__NAME}
+   database_user: ${SYMFONY__REMBRANDT__DATABASE__USER}
+   database_password: ${SYMFONY__REMBRANDT__DATABASE__PASSWORD}
+   mailer_transport: smtp
+   mailer_host: 127.0.0.1
+   mailer_user: null
+   mailer_password: null
+   secret: ${SYMFONY__REMBRANDT__SECRET}
+   gams_cookies_token_name: GAMS_Rembrandtplein_Token_PROD
+   gams_cookies_token_secure: true
+   gams_cookies_token_expiry: 51840000
+   messagebird_accountkey: ${SYMFONY__REMBRANDT__MESSAGEBIRD__API__KEY}
+   sms_originator: "DEVAMSRMBPL"
+   sms_disable: false
+   trusted_proxies:
+        - 127.0.0.1
+        - 10.0.0.0/8
+        - 172.16.0.0/12
+        - 192.168.0.0/16
+services:
+   rembrandtplein.appbundle.services.sms: '@rembrandtplein.appbundle.services.cmsmsgatewaysmsservice'
+EOF
+
+
 php composer.phar install
 
 cd /app/app

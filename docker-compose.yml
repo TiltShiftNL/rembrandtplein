@@ -6,6 +6,7 @@ services:
         ports:
             - "5402:5432"
         environment:
+            POSTGRES_USER: rembrandtplein
             POSTGRES_PASSWORD: insecure
     web:
         build: .
@@ -20,8 +21,8 @@ services:
             RBP_MESSAGEBIRD: insecure
             SYMFONY__REMBRANDT__DATABASE__HOST: "database"
             SYMFONY__REMBRANDT__DATABASE__PORT: "5432"
-            SYMFONY__REMBRANDT__DATABASE__NAME: "postgres"
-            SYMFONY__REMBRANDT__DATABASE__USER: "postgres"
+            SYMFONY__REMBRANDT__DATABASE__NAME: "rembrandtplein"
+            SYMFONY__REMBRANDT__DATABASE__USER: "rembrandtplein"
             SYMFONY__REMBRANDT__DATABASE__PASSWORD: "insecure"
             SYMFONY__REMBRANDT__MAILER__TRANSPORT: "smtp"
             SYMFONY__REMBRANDT__MAILER__HOST: "localhost"
