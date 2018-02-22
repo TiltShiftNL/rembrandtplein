@@ -26,7 +26,7 @@ parameters:
    messagebird_accountkey: ${SYMFONY__REMBRANDT__MESSAGEBIRD__API__KEY}
    messagebird_enable: ${SYMFONY__REMBRANDT__MESSAGEBIRD__ENABLE}
    sms_originator: "DEVAMSRMBPL"
-   sms_disable: false
+   sms_disable: true
    trusted_proxies:
         - 127.0.0.1
         - 10.0.0.0/8
