@@ -26,8 +26,6 @@ parameters:
    auto_login_from_email: ${SYMFONY__REMBRANDT__AUTO__LOGIN__FROM__EMAIL}
    retention_policy: ${SYMFONY__REMBRANDT__RETENTION__POLICY}
    secret: ${SYMFONY__REMBRANDT__SECRET}
-   messagebird_accountkey: ${SYMFONY__REMBRANDT__MESSAGEBIRD__API__KEY}
-   messagebird_enable: ${SYMFONY__REMBRANDT__MESSAGEBIRD__ENABLE}
    cmsmsgateway_token: ${SYMFONY__REMBRANDT__CMSMSGATEWAY__TOKEN}
    rembrandtplein.appbundle.services.sms: ${SYMFONY__REMBRANDT__SERVICES}
    sms_originator: ${SYMFONY__REMBRANDT__SMS__ORGINATOR}
