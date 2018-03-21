@@ -28,6 +28,7 @@ parameters:
    secret: ${SYMFONY__REMBRANDT__SECRET}
    messagebird_accountkey: ${SYMFONY__REMBRANDT__MESSAGEBIRD__API__KEY}
    messagebird_enable: ${SYMFONY__REMBRANDT__MESSAGEBIRD__ENABLE}
+   cmsmsgateway_token: ${SYMFONY__REMBRANDT__CMSMSGATEWAY__TOKEN}
    sms_originator: ${SYMFONY__REMBRANDT__SMS__ORGINATOR}
    sms_disable: false
    trusted_proxies:
