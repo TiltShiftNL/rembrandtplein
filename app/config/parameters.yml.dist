@@ -42,5 +42,5 @@ parameters:
     trusted_proxies: [ 127.0.0.1 ]
 
 services:
-    #rembrandtplein.appbundle.services.sms: '@rembrandtplein.appbundle.services.cmsmsgatewaysmsservice'   
-    rembrandtplein.appbundle.services.sms: '@rembrandtplein.appbundle.services.messagebirdsmsservice'   
+    #rembrandtplein.appbundle.services.sms: '@rembrandtplein.appbundle.services.messagebirdsmsservice'
+    rembrandtplein.appbundle.services.sms: '@rembrandtplein.appbundle.services.cmsmsgatewaysmsservice'

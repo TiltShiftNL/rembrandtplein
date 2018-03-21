@@ -40,6 +40,8 @@ services:
             SYMFONY__REMBRANDT__MESSAGEBIRD__ENABLE: "true"
             SYMFONY__REMBRANDT__MESSAGEBIRD__API__KEY: "insecure"
             SYMFONY__REMBRANDT__SMS__ORGINATOR: "service-name"
+            SYMFONY__REMBRANDT__SERVICES: "@rembrandtplein.appbundle.services.cmsmsgatewaysmsservice"
+            cmsmsgateway_token: "insecure"
             SYMFONY__REMBRANDT__PIWIK__SITE__ID: "null" # null for no piwik integration
             SYMFONY__REMBRANDT__TRUSTED__PROXIES: "127.0.0.1/32,192.168.0.0/16,172.16.0.0/12"
             SYMFONY__REMBRANDT__AUTO__LOGIN__FROM__EMAIL: "PT5M"
