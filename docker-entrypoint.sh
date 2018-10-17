@@ -32,7 +32,7 @@ parameters:
    sms_disable: false
    gams_api_users:
         testapiuser1:
-            password: ${SYMFONY__REMBRANDT__TEST_USER},
+            password: ${SYMFONY__REMBRANDT__TEST_USER}
             roles:
                 - ROLE_API
 
