@@ -25,3 +25,4 @@ parameters:
     piwik_site_id: '%rembrandt.piwik.site.id%'
     trusted_proxies: '%rembrandt.trusted.proxies%'
     rembrandtplein.appbundle.services.sms: '@rembrandtplein.appbundle.services.cmsmsgatewaysmsservice'
+    users: '%gams_api_users%'
