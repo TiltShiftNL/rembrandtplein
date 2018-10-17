@@ -30,9 +30,12 @@ parameters:
    rembrandtplein.appbundle.services.sms: ${SYMFONY__REMBRANDT__SERVICES}
    sms_originator: ${SYMFONY__REMBRANDT__SMS__ORGINATOR}
    sms_disable: false
-   users:   testapiuser1:
-            password: ${SYMFONY__REMBRANDT__TEST_USER}
-            roles: ROLE_API
+   gams_api_users:
+        testapiuser1:
+            password: ${SYMFONY__REMBRANDT__TEST_USER},
+            roles:
+                - ROLE_API
+
    trusted_proxies:
         - 127.0.0.1
         - 10.0.0.0/8
