@@ -31,7 +31,7 @@ parameters:
    sms_originator: ${SYMFONY__REMBRANDT__SMS__ORGINATOR}
    sms_disable: false
    gams_api_users:
-        testapiuser1:
+        dashboard:
             password: ${SYMFONY__REMBRANDT__TEST_USER}
             roles:
                 - ROLE_API
