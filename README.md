@@ -1,7 +1,7 @@
 # Rembrandtplein meld app 
 
 Een app voor de Vliegende brigade van de Gemeente Amsterdam. Meer informatie 
-over dit project is te vinden op [de website van het Datalab van de Gemeente Amsterdam](https://www.datalabamsterdam.nl/projecten/rembrandtplein)
+over dit project is te vinden op [de Clarity pagina Overlast Melden](https://clarity.codefor.nl/cbase/common-ground-47a41eb1f6db52d7f3e376aa0301c55a/usecase/overlast-melden-rembrandtplein-6318b2d19dd8c4610deafea3f0fd3694)
 
 ## Waarom is deze code gedeeld
 
